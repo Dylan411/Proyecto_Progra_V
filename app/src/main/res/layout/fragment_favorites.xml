@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".FavoritesFragment">
+
+    <View
+        android:id="@+id/viewFav"
+        android:layout_width="410dp"
+        android:layout_height="125dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="606dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageViewFav"
+        android:layout_width="149dp"
+        android:layout_height="99dp"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/mall_lincoln_plaza"
+        app:layout_constraintBottom_toBottomOf="@+id/viewFav"
+        app:layout_constraintEnd_toEndOf="@+id/viewFav"
+        app:layout_constraintHorizontal_bias="0.061"
+        app:layout_constraintStart_toStartOf="@+id/viewFav"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/txtTitleFav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:text="MALL LINCOL PLAZA"
+        app:layout_constraintBottom_toTopOf="@+id/txtSiteFav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.086"
+        app:layout_constraintStart_toEndOf="@+id/imageViewFav"
+        app:layout_constraintTop_toTopOf="@+id/viewFav"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/txtSiteFav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="CENTRO COMERCIAL"
+        app:layout_constraintBottom_toBottomOf="@+id/viewFav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.086"
+        app:layout_constraintStart_toEndOf="@+id/imageViewFav"
+        app:layout_constraintTop_toTopOf="@+id/viewFav" />
+
+    <TextView
+        android:id="@+id/txtCityFav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="LINDORA SAN JOSE"
+        app:layout_constraintBottom_toBottomOf="@+id/viewFav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toEndOf="@+id/imageViewFav"
+        app:layout_constraintTop_toBottomOf="@+id/txtSiteFav" />
+
+    <Button
+        android:id="@+id/btnFav"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/ic_favorite_red"
+        android:textColor="@color/red"
+        app:layout_constraintBottom_toBottomOf="@+id/viewFav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/txtCityFav"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
