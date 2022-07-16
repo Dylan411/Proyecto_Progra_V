@@ -9,25 +9,12 @@ import android.view.ViewGroup
 
 class FavoritesFragment : Fragment() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_favorites, container, false)
-    }
 
-    companion object {
-        @JvmStatic
-        fun newInstance() =
-            FavoritesFragment().apply {
-                arguments = Bundle().apply {
-
-                }
-            }
+    // Inflate the Layout for this fragment
+    return inflater.inflate(R.layout.fragment_favorites,container,false)
     }
 }
