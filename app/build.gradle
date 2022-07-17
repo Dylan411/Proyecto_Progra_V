@@ -37,6 +37,7 @@ android {
 
 dependencies {
     implementation "androidx.fragment:fragment-ktx:1.5.0"
+    implementation "com.google.firebase:firebase-firestore:24.2.1"
     implementation 'com.google.android.gms:play-services-auth:20.2.0'
     implementation 'com.google.firebase:firebase-auth:21.0.6'
     implementation 'com.squareup.picasso:picasso:2.71828'

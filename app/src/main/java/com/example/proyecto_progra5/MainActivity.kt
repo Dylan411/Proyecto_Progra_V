@@ -1,5 +1,6 @@
 package com.example.proyecto_progra5
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -10,8 +11,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         openFragment(HomeFragment())
-
-        bottomNavigationView.setOnNavigationItemSelectedListener {
+        //btnAddSite.hide()
+        btnNavbar.setOnNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.homeFragment -> openFragment(HomeFragment())
                 R.id.perfilFragment -> openFragment(PerilFragment())
@@ -20,6 +21,10 @@ class MainActivity : AppCompatActivity() {
                 R.id.topFragment -> openFragment(TopFragment())
             }
             true
+        }
+
+        btnAddSite.setOnClickListener{
+            startActivity(Intent(this,InsertActivity::class.java))
         }
     }
 

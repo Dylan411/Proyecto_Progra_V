@@ -8,16 +8,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.view.isVisible
 import com.example.proyecto_progra5.databinding.FragmentPerfilBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_perfil.*
 
 
@@ -25,6 +28,7 @@ class PerilFragment : Fragment() {
     private val TAG = "LoginActivity"
     private val RC_GOOGLE_SIGN_IN = 4926
     private lateinit var auth: FirebaseAuth
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,25 +41,35 @@ class PerilFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        btnLogin.isVisible = true
+        btnLogout.isVisible = false
+        imageViewLogin.isVisible = false
+        lblEmail.isVisible = false
         auth = Firebase.auth
         val gso =
             GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build()
-        val googleSignInClient = GoogleSignIn.getClient(requireActivity(),gso)
+        val googleSignInClient = GoogleSignIn.getClient(requireActivity(), gso)
         btnLogin.setOnClickListener {
             val signInIntent = googleSignInClient.signInIntent
             startActivityForResult(
                 signInIntent,
                 RC_GOOGLE_SIGN_IN
             )
+            //btnAddSite.show()
         }
         btnLogout.setOnClickListener {
             googleSignInClient.signOut()
             Firebase.auth.signOut()
             lblEmail.text = "Welcome"
             imageViewLogin.setImageResource(0)
+            btnLogin.isVisible = true
+            btnLogout.isVisible = false
+            imageViewLogin.isVisible = false
+            lblEmail.isVisible = false
+            btnAddSite.isVisible = false
         }
     }
 
@@ -91,11 +105,16 @@ class PerilFragment : Fragment() {
                         Picasso.get()
                             .load(user.photoUrl)
                             .into(imageViewLogin)
+                        btnLogin.isVisible = false
+                        btnLogout.isVisible = true
+                        imageViewLogin.isVisible = true
+                        lblEmail.isVisible = true
                     }
                     updateUI(user)
                 } else {
                     Log.w(TAG, "signInWithCredential:failure", task.exception)
-                    Toast.makeText(requireActivity(), "Authentication failed", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireActivity(), "Authentication failed", Toast.LENGTH_SHORT)
+                        .show()
                     updateUI(null)
                 }
             }
@@ -110,6 +129,10 @@ class PerilFragment : Fragment() {
             Picasso.get()
                 .load(currentUser.photoUrl)
                 .into(imageViewLogin)
+            btnLogin.isVisible = false
+            btnLogout.isVisible = true
+            imageViewLogin.isVisible = true
+            lblEmail.isVisible = true
         }
         updateUI(currentUser)
     }
