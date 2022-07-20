@@ -1,10 +1,16 @@
 package com.example.proyecto_progra5
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.AttributeSet
+import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_home.*
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,14 +25,18 @@ class MainActivity : AppCompatActivity() {
                 R.id.favoritesFragment -> openFragment(FavoritesFragment())
                 R.id.searchFragment -> openFragment(SearchFragment())
                 R.id.topFragment -> openFragment(TopFragment())
+
             }
             true
         }
 
-        btnAddSite.setOnClickListener{
-            startActivity(Intent(this,InsertActivity::class.java))
+        btnAddSite.setOnClickListener {
+            startActivity(Intent(this, InsertActivity::class.java))
         }
+
+
     }
+
 
     // funcion para abrir fragments en el fragmentView
     private fun openFragment(fragment: Fragment) {
@@ -35,6 +45,8 @@ class MainActivity : AppCompatActivity() {
         transaction.addToBackStack(null)
         transaction.commit()
     }
+
+
 }
 
 

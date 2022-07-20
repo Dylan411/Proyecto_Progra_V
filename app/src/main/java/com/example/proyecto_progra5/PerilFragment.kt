@@ -120,7 +120,7 @@ class PerilFragment : Fragment() {
             }
     }
 
-    public override fun onStart() {
+     override fun onStart() {
         super.onStart()
         // Check if user is signed in (non-null) and update UI accordingly.
         val currentUser = auth.currentUser

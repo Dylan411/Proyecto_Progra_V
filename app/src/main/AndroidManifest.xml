@@ -14,6 +14,17 @@
         android:theme="@style/Theme.Proyecto_progra5"
         tools:targetApi="31">
         <activity
+            android:name=".InformationFragment"
+            android:parentActivityName=".MainActivity"
+            android:exported="false"
+            android:label="@string/title_activity_information_fragment"
+            android:theme="@style/Theme.Proyecto_progra5.NoActionBar" />
+        <activity
+            android:name=".informationActivity"
+            android:exported="false"
+            android:label="@string/title_activity_information"
+            android:theme="@style/Theme.Proyecto_progra5.NoActionBar" />
+        <activity
             android:name=".InsertActivity"
             android:exported="false" />
         <activity

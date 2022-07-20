@@ -16,4 +16,19 @@
     <string name="lindora_san_jose">LINDORA SAN JOSE</string>
     <string name="mall_lincol_plaza">MALL LINCOL PLAZA</string>
     <string name="centro_comercial">CENTRO COMERCIAL</string>
+    <string name="title">MALL LINCOLN</string>
+    <string name="secondary_text">LINDORA</string>
+    <string name="content_description_media">CENTRO COMERICAL</string>
+    <string name="supporting_text">CENTRO COMERCAIL</string>
+    <string name="title_activity_information">informationActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_information_fragment">informationFragment</string>
+    <string name="ver">VER</string>
 </resources>

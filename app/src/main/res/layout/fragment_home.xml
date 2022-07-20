@@ -1,73 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:backgroundTint="@color/pastel"
+    style="?attr/materialCardViewElevatedStyle"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".FavoritesFragment">
 
-    <View
-        android:id="@+id/viewHome"
-        android:layout_width="410dp"
-        android:layout_height="125dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="598dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageViewHome"
-        android:layout_width="149dp"
-        android:layout_height="99dp"
-        android:layout_marginBottom="16dp"
-        android:src="@drawable/mall_lincoln_plaza"
-        app:layout_constraintBottom_toBottomOf="@+id/viewHome"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.061"
-        app:layout_constraintStart_toStartOf="@+id/viewHome"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.888" />
-
-    <TextView
-        android:id="@+id/txtTitleHome"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/card"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintBottom_toBottomOf="@+id/viewHome"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
-        app:layout_constraintStart_toEndOf="@+id/imageViewHome"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
 
-    <TextView
-        android:id="@+id/txtSiteHome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/viewHome"
-        app:layout_constraintEnd_toEndOf="@+id/viewHome"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toEndOf="@+id/imageViewHome"
-        app:layout_constraintTop_toBottomOf="@+id/txtTitleHome"
-        app:layout_constraintVertical_bias="0.0" />
+        <!-- Media -->
+        <ImageView
+            android:id="@+id/imageViewHome"
+            android:layout_width="match_parent"
+            android:layout_height="194dp"
+            android:contentDescription="@string/content_description_media"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/mall_lincoln_plaza" />
 
-    <TextView
-        android:id="@+id/txtCityHome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/viewHome"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.45"
-        app:layout_constraintStart_toEndOf="@+id/imageViewHome"
-        app:layout_constraintTop_toBottomOf="@+id/txtSiteHome"
-        app:layout_constraintVertical_bias="0.0" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <!-- Title, secondary and supporting text -->
+            <TextView
+                android:id="@+id/txtTitleHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title"
+                android:textAppearance="?attr/textAppearanceHeadline6" />
+
+            <TextView
+                android:id="@+id/txtSiteHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/secondary_text"
+                android:textAppearance="?attr/textAppearanceBody2"
+                android:textColor="#795548" />
+
+            <TextView
+                android:id="@+id/txtCityHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/supporting_text"
+                android:textAppearance="?attr/textAppearanceBody2"
+                android:textColor="#795548" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnInfo"
+                style="?attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="@color/white"
+                android:text="@string/ver" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

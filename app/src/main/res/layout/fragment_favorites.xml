@@ -74,7 +74,7 @@
         android:layout_height="48dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="12dp"
-        android:background="@drawable/ic_favorite_red"
+        android:background="@drawable/ic_favorite_empty"
         android:textColor="@color/red"
         app:layout_constraintBottom_toBottomOf="@+id/viewFav"
         app:layout_constraintEnd_toEndOf="parent"
